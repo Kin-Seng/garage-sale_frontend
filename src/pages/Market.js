@@ -97,7 +97,7 @@ class Market extends Component {
                             <td >{post.product_name}</td>
                             <td>{new Intl.NumberFormat('en-GB', { 
                               style: 'currency', 
-                              currency: 'RM' 
+                              currency: 'MYR' 
                               }).format(post.price)}</td>
                             <td >{post.seller_name}</td>
                             <td>
