@@ -59,6 +59,9 @@ class loginModal extends React.Component {
                 localStorage.setItem('user_id', response.data.user.id)
                 localStorage.setItem('JWT', response.data.access_token)
               
+                sessionStorage.setItem('username', response.data.user.username)
+                sessionStorage.setItem('user_id', response.data.user.id)
+                sessionStorage.setItem('JWT', response.data.access_token)
             })
             .catch(error => {
                 // console.log(error)

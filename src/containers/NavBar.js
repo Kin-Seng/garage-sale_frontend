@@ -85,12 +85,20 @@ class NavBar extends React.Component {
             isSignUp: !this.state.isSignUp
         })
     }    
-    // <NavbarBrand href="/">Home</NavbarBrand>
+
+    routeToOwnPosts = () =>{
+        let path = "/mySellingPost/" + localStorage.getItem('user_id');
+        return path
+        // this.props.history.push(path);
+    }
+
     render(){
         return(
             <div>
                 <Navbar className="Navbar" color="dark" dark expand="md">
                     <NavbarBrand href="/">Home</NavbarBrand>
+                    <NavbarBrand href="/market">Market</NavbarBrand>
+                    <NavbarBrand href={`/mySellingPost/${localStorage.getItem('user_id')}`}>My Selling Post</NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
