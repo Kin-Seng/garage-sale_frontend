@@ -29,7 +29,9 @@ class Market extends Component {
 
   fetchMarket= ()=>{
     
-    axios.get(`https://garage-sales-backend.herokuapp.com/api/v1/selling_post/market`,{  
+    
+    axios.get(`http://localhost:5000/api/v1/selling_post/market`,{  
+    // axios.get(`https://garage-sales-backend.herokuapp.com/api/v1/selling_post/market`,{  
       headers: {
         "Authorization": "Bearer " + localStorage.getItem("JWT")
       }
@@ -49,6 +51,11 @@ class Market extends Component {
     let path = "/payment";
     this.props.history.push(path);
     
+  }
+
+  routeChange = () => {
+    let path = "/postItem";
+    this.props.history.push(path);
   }
 
   //We should never fetch any data in render method.
@@ -75,7 +82,7 @@ class Market extends Component {
           <h1>Market Place/Selling Post</h1>
 
           <br></br><br></br>
-          <Button color="primary"   onClick={this.routeChange} style={{'display': 'flex','margin':'0 auto'}}> Create a new Selling Post</Button>
+          <Button color="primary" onClick={this.routeChange} style={{'display': 'flex','margin':'0 auto'}}> Create a new Selling Post</Button>
           <br></br>
               <Table>
                 <thead>

@@ -27,7 +27,8 @@ class Payment extends Component {
   componentDidMount() {
 
     // get Token from Braintree API
-    axios.get(`https://garage-sales-backend.herokuapp.com/api/v1/selling_post/getToken`,{
+    // axios.get(`https://garage-sales-backend.herokuapp.com/api/v1/selling_post/getToken`,{
+    axios.get(`https://localhost:5000/api/v1/selling_post/getToken`,{
       headers: {
           "Authorization": "Bearer " + localStorage.getItem("JWT")
       }})
@@ -64,8 +65,9 @@ class Payment extends Component {
         price: this.state.price
       }
 
-      // payment & update DB  
-      axios.post('https://garage-sales-backend.herokuapp.com/api/v1/selling_post/purchase',buyThisItem)
+      // payment & update DB
+      axios.post('http://localhost:5000/api/v1/selling_post/purchase',buyThisItem)  
+      // axios.post('https://garage-sales-backend.herokuapp.com/api/v1/selling_post/purchase',buyThisItem)
       .then(result => {
         if(result.data.status === "success"){
           alert('You have bought this item')
