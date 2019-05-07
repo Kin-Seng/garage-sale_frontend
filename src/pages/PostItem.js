@@ -33,7 +33,7 @@ class SellingPosts extends Component {
       "seller_id": localStorage.getItem('user_id')
     }
     // console.log(SellItem)
-    axios.post('http://localhost:5000/api/v1/selling_post/create',SellItem)
+    axios.post('https://garage-sales-backend.herokuapp.com/api/v1/selling_post/create',SellItem)
     .then(result => {
       if(result.data.status === "success"){
         alert('Your item is ready to be sell')

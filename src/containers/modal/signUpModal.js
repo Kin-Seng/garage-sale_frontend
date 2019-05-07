@@ -89,7 +89,7 @@ class signUpModal extends React.Component {
 
         axios({
             method: 'post',
-            url: 'http://localhost:5000/api/v1/users/create',
+            url: 'https://garage-sales-backend.herokuapp.com/api/v1/users/create',
             header: {
                 'content-type': 'application/json'
             },

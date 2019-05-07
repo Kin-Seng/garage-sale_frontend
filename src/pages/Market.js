@@ -29,7 +29,7 @@ class Market extends Component {
 
   fetchMarket= ()=>{
     
-    axios.get(`http://localhost:5000/api/v1/selling_post/market`,{  
+    axios.get(`https://garage-sales-backend.herokuapp.com/api/v1/selling_post/market`,{  
       headers: {
         "Authorization": "Bearer " + localStorage.getItem("JWT")
       }

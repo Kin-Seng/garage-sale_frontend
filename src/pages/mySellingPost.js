@@ -28,9 +28,7 @@ class SellingPosts extends Component {
 
   fetchMyPosts=()=>{
 
-    // axios.post(`http://localhost:5000/api/v1/selling_post/market`,currentUser)
-    // axios.get(`{http://localhost:5000/api/v1/selling_post/mySellingPost/${localStorage.getItem('user_id')}}`)
-    axios.get(`http://localhost:5000/api/v1/selling_post/mySellingPost/${this.props.match.params.id}`,{  
+    axios.get(`https://garage-sales-backend.herokuapp.com/api/v1/selling_post/mySellingPost/${this.props.match.params.id}`,{  
       headers: {
         "Authorization": "Bearer " + localStorage.getItem("JWT")
       }
@@ -53,10 +51,8 @@ class SellingPosts extends Component {
   }
 
   deletePost = (product_id) =>{
-    // alert("delete post for " + product_id);
-    // alert(`http://localhost:5000/api/v1/selling_post/delete/${product_id}`)
 
-    axios.post(`http://localhost:5000/api/v1/selling_post/delete/${product_id}`,{  
+    axios.post(`https://garage-sales-backend.herokuapp.com/api/v1/selling_post/delete/${product_id}`,{  
       headers: {
         "Authorization": "Bearer " + localStorage.getItem("JWT")
       }

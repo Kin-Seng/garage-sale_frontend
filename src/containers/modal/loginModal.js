@@ -44,11 +44,9 @@ class loginModal extends React.Component {
         }        
         
         if(validEmailFlag && validPwd){
-            // debugger                        
-            // axios.post('http://localhost:5000/api/v1/users/login',currentUser)
             axios({
                 method: 'post',
-                url: 'http://localhost:5000/api/v1/users/login',
+                url: 'https://garage-sales-backend.herokuapp.com/api/v1/users/login',
                 data: currentUser
             })
             .then(response => {
